@@ -1,9 +1,3 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.Zooming = {})));
-}(this, (function (exports) { 'use strict';
-
 /**
  * Detecting prefixes for saving time and bytes
  */
@@ -812,8 +806,4 @@ function lory(slider, opts) {
     };
 }
 
-exports.lory = lory;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+export { lory };

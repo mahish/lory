@@ -1,7 +1,7 @@
 /**
  * Detecting prefixes for saving time and bytes
  */
-export default function detectPrefixes () {
+export default function detectPrefixes() {
     let transform;
     let transition;
     let transitionEnd;
@@ -37,7 +37,9 @@ export default function detectPrefixes () {
 
         document.body.insertBefore(el, null);
         style[transform] = 'translate3d(0, 0, 0)';
-        hasTranslate3d = !!global.getComputedStyle(el).getPropertyValue(transform);
+        const computedStyle = window.getComputedStyle(el) || global.getComputedStyle(el);
+        hasTranslate3d = !!computedStyle.getPropertyValue(transform);
+        (transform);
         document.body.removeChild(el);
     }());
 
